@@ -1,4 +1,5 @@
 import Background from "./components/Background"
+import Forground from "./components/Forground"
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <div className="relative w-full h-screen bg-zinc-800 ">
         <Background/>
+        <Forground/>
       </div>
     </>
   )
