@@ -1,8 +1,12 @@
+import Background from "./components/Background"
+
 function App() {
 
   return (
     <>
-      <div className="text-center text-2xl font-semibold">Hello Sourav</div>
+      <div className="relative w-full h-screen bg-zinc-800 ">
+        <Background/>
+      </div>
     </>
   )
 }
