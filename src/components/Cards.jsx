@@ -2,10 +2,11 @@ import React from 'react';
 import { LuFileSignature } from "react-icons/lu";
 import { MdOutlineSimCardDownload } from "react-icons/md";
 import { IoMdCloseCircle } from "react-icons/io";
+import { motion } from "framer-motion";
 
-function Cards({ data }) {
+function Cards({ data, referamce }) {
   return (
-    <div className='w-52 relative flex-shrink-0 h-56 bg-zinc-700/90 rounded-[20px] p-3'>
+    <motion.div drag dragConstraints={referamce} whileDrag={{scale:1.2}} className='w-52 relative flex-shrink-0 h-56 bg-zinc-700/90 rounded-[20px] p-3'>
       <LuFileSignature className='text-2xl text-white' />
       <p className='font-semibold leading-tight mt-3 text-gray-300'>{data.title}</p>
       <p className='text-xs leading-tight mt-2 text-gray-400'>{data.description}</p>
@@ -22,7 +23,7 @@ function Cards({ data }) {
         </div>
         )
       }
-    </div>
+    </motion.div>
   );
 }
 

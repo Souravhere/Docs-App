@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Cards from './Cards';
 
+
 function Forground() {
+  const ref = useRef(null);
+
   const data = [
     {
       title: "Drag and Drop",
@@ -22,7 +25,7 @@ function Forground() {
       tag: {
         isOpen: true,
         tagtitle: "Download Now",
-        tagColor: "green"
+        tagColor: "red"
       }
     },
     {
@@ -40,10 +43,10 @@ function Forground() {
 
   useState();
   return (
-    <div className="fixed top-0 left-0 z-50 w-full h-screen p-5 flex flex-wrap gap-5">
+    <div ref={ref} className="fixed top-0 left-0 z-50 w-full h-screen p-5 flex flex-wrap gap-5">
       {/* <Cards/> */}
       {data.map((item, index) => (
-        <Cards key={index} data={item} />
+        <Cards key={index} data={item} referamce={ref} />
       ))}
     </div>
   );
